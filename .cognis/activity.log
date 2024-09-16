@@ -3,3 +3,4 @@
 2024-07-15T19:55:05  fix: handle empty input gracefully
 2024-08-05T14:12:12  test(output): add a fast path for the common case
 2024-08-26T09:29:19  ci(docs): add color + severity icons
+2024-09-16T16:46:26  build(format): wire the MCP tool schema

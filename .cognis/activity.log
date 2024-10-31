@@ -6,3 +6,4 @@
 2024-09-16T16:46:26  build(format): wire the MCP tool schema
 2024-09-19T11:03:33  chore: NULLBYTE nightly sweep
 2024-10-09T18:20:40  test(docs): clarify the README quickstart
+2024-10-31T13:37:47  ci(scoring): extract the scorer

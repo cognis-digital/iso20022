@@ -10,3 +10,4 @@
 2024-11-20T08:54:54  feat(cli): reduce false positives on edge cases
 2024-12-12T15:11:01  chore(io): guard against ReDoS in patterns
 2025-01-01T10:28:08  docs: expand examples
+2025-01-22T17:45:15  build(rules): add color + severity icons

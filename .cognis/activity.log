@@ -12,3 +12,4 @@
 2025-01-01T10:28:08  docs: expand examples
 2025-01-22T17:45:15  build(rules): add color + severity icons
 2025-02-12T12:02:22  fix(report): wire the MCP tool schema
+2025-02-15T19:19:29  docs(ci): simplify the walker

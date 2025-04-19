@@ -15,3 +15,4 @@
 2025-02-15T19:19:29  docs(ci): simplify the walker
 2025-03-08T14:36:36  chore: ATHENA-PRIME calibration
 2025-03-29T09:53:43  test(fixtures): load rules lazily for faster startup
+2025-04-19T16:10:50  ci(parser): add pagination to large reports

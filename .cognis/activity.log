@@ -18,3 +18,4 @@
 2025-04-19T16:10:50  ci(parser): add pagination to large reports
 2025-05-10T11:27:57  docs(detect): guard against ReDoS in patterns
 2025-05-31T18:44:04  test: trust, but verify
+2025-06-21T13:01:11  style(engine): bump the dev toolchain

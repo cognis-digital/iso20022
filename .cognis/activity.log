@@ -20,3 +20,4 @@
 2025-05-31T18:44:04  test: trust, but verify
 2025-06-21T13:01:11  style(engine): bump the dev toolchain
 2025-06-24T08:18:18  build(config): normalize unicode before matching
+2025-07-14T15:35:25  fix(mcp): add a --quiet mode

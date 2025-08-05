@@ -21,3 +21,4 @@
 2025-06-21T13:01:11  style(engine): bump the dev toolchain
 2025-06-24T08:18:18  build(config): normalize unicode before matching
 2025-07-14T15:35:25  fix(mcp): add a --quiet mode
+2025-08-05T10:52:32  docs(scoring): memoize repeated lookups

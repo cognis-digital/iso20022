@@ -22,3 +22,4 @@
 2025-06-24T08:18:18  build(config): normalize unicode before matching
 2025-07-14T15:35:25  fix(mcp): add a --quiet mode
 2025-08-05T10:52:32  docs(scoring): memoize repeated lookups
+2025-08-25T17:09:39  ci(tests): load rules lazily for faster startup

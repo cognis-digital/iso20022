@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr>
+      <MsgId>MSG-20260608-0001</MsgId>
+      <CreDtTm>2026-06-08T09:30:00Z</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>1500.00</CtrlSum>
+      <SttlmInf>
+        <SttlmMtd>INDA</SttlmMtd>
+      </SttlmInf>
+    </GrpHdr>
+    <CdtTrfTxInf>
+      <PmtId>
+        <InstrId>INSTR-0001</InstrId>
+        <EndToEndId>E2E-0001</EndToEndId>
+        <TxId>TX-0001</TxId>
+      </PmtId>
+      <IntrBkSttlmAmt Ccy="EUR">1500.00</IntrBkSttlmAmt>
+      <IntrBkSttlmDt>2026-06-08</IntrBkSttlmDt>
+      <Dbtr>
+        <Nm>ACME Industries NV</Nm>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>DE89370400440532013000</IBAN>
+        </Id>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BICFI>DEUTDEFF</BICFI>
+        </FinInstnId>
+      </DbtrAgt>
+      <CdtrAgt>
+        <FinInstnId>
+          <BICFI>NDEAFIHH</BICFI>
+        </FinInstnId>
+      </CdtrAgt>
+      <Cdtr>
+        <Nm>Nordic Trading Oy</Nm>
+      </Cdtr>
+      <CdtrAcct>
+        <Id>
+          <IBAN>FI2112345600000785</IBAN>
+        </Id>
+      </CdtrAcct>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>

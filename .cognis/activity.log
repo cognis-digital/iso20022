@@ -26,3 +26,4 @@
 2025-09-16T12:26:46  feat(mcp): add pagination to large reports
 2025-10-06T19:43:53  chore(cache): pin the test dependencies
 2025-10-27T14:00:00  docs(rules): improve error messages with context
+2025-10-30T09:17:07  chore: one does not simply skip CI

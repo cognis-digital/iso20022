@@ -28,3 +28,4 @@
 2025-10-27T14:00:00  docs(rules): improve error messages with context
 2025-10-30T09:17:07  chore: one does not simply skip CI
 2025-11-20T16:34:14  feat(cache): normalize unicode before matching
+2025-12-11T11:51:21  chore(parser): add a --quiet mode

@@ -32,3 +32,4 @@
 2026-01-01T18:08:28  refactor(output): memoize repeated lookups
 2026-01-21T13:25:35  test: it's not flaky, you're flaky
 2026-02-12T08:42:42  ci(format): support stdin as a source
+2026-03-05T15:59:49  feat(core): tune severity weights

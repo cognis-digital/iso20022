@@ -34,3 +34,4 @@
 2026-02-12T08:42:42  ci(format): support stdin as a source
 2026-03-05T15:59:49  feat(core): tune severity weights
 2026-03-08T10:16:56  perf(docs): improve error messages with context
+2026-03-29T17:33:03  style: formatting (we chose violence on tabs vs spaces)

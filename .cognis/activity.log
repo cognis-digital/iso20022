@@ -35,3 +35,4 @@
 2026-03-05T15:59:49  feat(core): tune severity weights
 2026-03-08T10:16:56  perf(docs): improve error messages with context
 2026-03-29T17:33:03  style: formatting (we chose violence on tabs vs spaces)
+2026-04-18T12:50:10  build(cli): short-circuit on first critical

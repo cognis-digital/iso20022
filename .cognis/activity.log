@@ -37,3 +37,4 @@
 2026-03-29T17:33:03  style: formatting (we chose violence on tabs vs spaces)
 2026-04-18T12:50:10  build(cli): short-circuit on first critical
 2026-05-10T19:07:17  feat(io): lower memory on big inputs
+2026-05-30T14:24:24  chore(tests): add --fail-on threshold handling

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: iso20022, labels: { app: iso20022 } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: iso20022 } }
+  template:
+    metadata: { labels: { app: iso20022 } }
+    spec:
+      containers:
+        - name: iso20022
+          image: ghcr.io/cognis-digital/iso20022:latest
+          ports: [{ containerPort: 8000 }]
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: iso20022 }
+spec:
+  selector: { app: iso20022 }
+  ports: [{ port: 80, targetPort: 8000 }]

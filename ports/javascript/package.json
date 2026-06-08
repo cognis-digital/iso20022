@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/iso20022",
+  "version": "0.2.0",
+  "description": "JavaScript port of iso20022 (Cognis Neural Suite)",
+  "bin": {
+    "iso20022": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}

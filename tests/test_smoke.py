@@ -1,12 +1,10 @@
 """Smoke tests for the iso20022 validator. No network, runs on the demo files."""
 import os
 
-import pytest
 
 from iso20022 import (
     TOOL_NAME,
     TOOL_VERSION,
-    Severity,
     validate_file,
     validate_string,
 )

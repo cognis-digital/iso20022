@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-iso20022
+pip install "git+https://github.com/cognis-digital/iso20022.git"
 iso20022 scan .            # → prioritized findings in seconds
 ```
 
@@ -50,7 +50,7 @@ The 2025 SWIFT MT-to-MX migration left teams without a free CLI validator; schem
 ## Quick start
 
 ```bash
-pip install cognis-iso20022
+pip install "git+https://github.com/cognis-digital/iso20022.git"
 iso20022 --version
 iso20022 scan .                       # scan current project
 iso20022 scan . --format json         # machine-readable

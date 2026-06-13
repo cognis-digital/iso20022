@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/iso20022.git"
 iso20022 scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+ISO 20022 is the global standard format used by banks and payment networks to send money transfers electronically. This tool checks whether your payment message files follow that standard correctly — catching errors like invalid bank account numbers (IBANs), wrong bank codes (BICs), bad currency codes, and mismatched transaction totals before they cause rejected or delayed payments. You run it from the command line, point it at your XML payment files, and get a clear report of any problems. It is aimed at payment operations teams, developers building payment software, and compliance engineers who need to validate SWIFT MX messages in automated pipelines.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why iso20022?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -47,6 +53,42 @@ The 2025 SWIFT MT-to-MX migration left teams without a free CLI validator; schem
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`iso20022` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/iso20022/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/iso20022/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/iso20022.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/iso20022.git"  # uv
+pip install "git+https://github.com/cognis-digital/iso20022.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/iso20022.git
+cd iso20022 && pip install .
+```
+
+Then run:
+```sh
+iso20022 --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash

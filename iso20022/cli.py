@@ -81,13 +81,6 @@ def _build_parser() -> argparse.ArgumentParser:
         action="version",
         version=f"{TOOL_NAME} {TOOL_VERSION}",
     )
-    parser.add_argument(
-        "--format",
-        choices=("table", "json"),
-        default="table",
-        help="Output format (default: table). Use json for CI / piping.",
-    )
-
     sub = parser.add_subparsers(dest="command")
     val = sub.add_parser(
         "validate",
@@ -100,6 +93,12 @@ def _build_parser() -> argparse.ArgumentParser:
         nargs="+",
         metavar="FILE",
         help="Path(s) to ISO 20022 XML message file(s).",
+    )
+    val.add_argument(
+        "--format",
+        choices=("table", "json"),
+        default="table",
+        help="Output format (default: table). Use json for CI / piping.",
     )
     return parser
 

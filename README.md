@@ -20,6 +20,31 @@ pip install cognis-iso20022
 iso20022 scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+`iso20022` validates and lints ISO 20022 pacs/camt XML payment messages. The
+only subcommand is `validate`; it exits non-zero when any file has errors, so it
+drops straight into a CI gate.
+
+```bash
+# 1. Install (from a clone or once published)
+pip install -e .
+
+# 2. Validate a single message (human-readable table)
+iso20022 validate payment.xml
+
+# 3. Validate several files and emit JSON for piping / dashboards
+iso20022 validate *.xml --format json > iso-report.json
+
+# 4. Read the result: the JSON carries per-file findings + an error/warning
+#    count; the process exit code is 1 if ANY file has errors, else 0.
+iso20022 validate payment.xml && echo "CLEAN"
+
+# 5. CI gate — fail the build on any invalid message
+iso20022 validate messages/*.xml || exit 1
+```
+
+
 ## Contents
 
 - [Why iso20022?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)

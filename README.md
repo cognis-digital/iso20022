@@ -22,28 +22,38 @@ iso20022 scan .            # → prioritized findings in seconds
 
 ## Usage — step by step
 
-`iso20022` validates and lints ISO 20022 pacs/camt XML payment messages. The
-only subcommand is `validate`; it exits non-zero when any file has errors, so it
-drops straight into a CI gate.
+1. **Install** (zero runtime dependencies, standard library only):
 
-```bash
-# 1. Install (from a clone or once published)
-pip install -e .
+   ```bash
+   pip install iso20022
+   ```
 
-# 2. Validate a single message (human-readable table)
-iso20022 validate payment.xml
+2. **Validate a message** — point the `validate` subcommand at one or more ISO 20022 XML files (pacs/camt SWIFT MX):
 
-# 3. Validate several files and emit JSON for piping / dashboards
-iso20022 validate *.xml --format json > iso-report.json
+   ```bash
+   iso20022 validate payment.xml
+   ```
 
-# 4. Read the result: the JSON carries per-file findings + an error/warning
-#    count; the process exit code is 1 if ANY file has errors, else 0.
-iso20022 validate payment.xml && echo "CLEAN"
+   You get a per-file table of findings (ERROR / WARN / INFO) plus a summary line.
 
-# 5. CI gate — fail the build on any invalid message
-iso20022 validate messages/*.xml || exit 1
-```
+3. **Validate a batch** — globs and multiple paths are accepted:
 
+   ```bash
+   iso20022 validate inbound/*.xml
+   ```
+
+4. **Read the output in CI** — emit JSON for piping, and rely on the exit code (non-zero when any file has errors):
+
+   ```bash
+   iso20022 validate payment.xml --format json | jq '.ok'
+   iso20022 validate payment.xml && echo CLEAN
+   ```
+
+5. **Automation / CI gate** — fail the pipeline when any message is invalid:
+
+   ```bash
+   iso20022 validate messages/*.xml --format json > iso20022-report.json
+   ```
 
 ## Contents
 

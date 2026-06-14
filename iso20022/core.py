@@ -380,7 +380,7 @@ def _check_txn_count_and_sum(root: ET.Element, report: Report) -> None:
         return
 
     nb = _first_text(grp, "NbOfTxs")
-    if nb is not None and txs:
+    if nb is not None:
         try:
             declared = int(nb)
             if declared != len(txs):
@@ -462,8 +462,45 @@ def validate_file(path: str) -> Report:
     try:
         with open(path, "r", encoding="utf-8") as fh:
             text = fh.read()
+    except UnicodeDecodeError:
+        # File exists but is not valid UTF-8 (e.g. Latin-1 or binary).
+        report = Report(source=path)
+        report.add(
+            "IO002",
+            Severity.ERROR,
+            "File is not valid UTF-8; ISO 20022 XML must be UTF-8 encoded.",
+        )
+        return report
     except OSError as exc:
         report = Report(source=path)
         report.add("IO001", Severity.ERROR, f"Could not read file: {exc}")
         return report
     return validate_string(text, source=path)
+
+
+# ---------------------------------------------------------------------------
+# Package identity (re-exported by __init__.py)
+# ---------------------------------------------------------------------------
+
+TOOL_NAME: str = "iso20022"
+TOOL_VERSION: str = "0.1.0"
+
+
+# ---------------------------------------------------------------------------
+# Convenience aliases used by mcp_server and external integrations
+# ---------------------------------------------------------------------------
+
+def scan(target: str) -> Report:
+    """Alias for validate_file; accepts a file path.
+
+    Provides the ``scan(target)`` entry-point consumed by the MCP server and
+    other integrations so they do not need to know the underlying function
+    name.
+    """
+    return validate_file(target)
+
+
+def to_json(report: Report) -> str:
+    """Serialise a Report to a compact JSON string."""
+    import json
+    return json.dumps(report.to_dict(), indent=2)

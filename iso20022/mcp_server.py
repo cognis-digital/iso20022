@@ -15,7 +15,10 @@ def serve() -> int:
 
     @app.tool()
     def iso20022_scan(target: str) -> str:
-        """Validates, lints, and diffs ISO 20022 / pacs / camt payment messages and translates legacy MT into MX with schema-aware errors.. Returns JSON findings."""
+        """Validate and lint an ISO 20022 / pacs / camt XML file.
+
+        Returns JSON findings.
+        """
         return to_json(scan(target))
 
     app.run()

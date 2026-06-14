@@ -47,7 +47,8 @@ def _render_table(reports: List[Report]) -> str:
         total_warn += len(rep.warnings)
         status = "OK" if rep.ok else "FAILED"
         lines.append(
-            f"  => {status} ({len(rep.errors)} error(s), {len(rep.warnings)} warning(s))"
+            f"  => {status} ({len(rep.errors)} error(s),"
+            f" {len(rep.warnings)} warning(s))"
         )
         lines.append("")
     lines.append(
@@ -104,6 +105,19 @@ def _build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Optional[List[str]] = None) -> int:
+    import sys as _sys
+
+    try:
+        return _main(argv)
+    except KeyboardInterrupt:
+        print("", file=_sys.stderr)
+        return 130
+    except Exception as exc:  # pragma: no cover
+        print(f"iso20022: unexpected error: {exc}", file=_sys.stderr)
+        return 2
+
+
+def _main(argv: Optional[List[str]] = None) -> int:
     parser = _build_parser()
     args = parser.parse_args(argv)
 

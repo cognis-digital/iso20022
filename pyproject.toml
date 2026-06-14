@@ -34,3 +34,6 @@ iso20022 = "iso20022.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["iso20022"]
+
+[tool.hatch.metadata]
+allow-direct-references = true

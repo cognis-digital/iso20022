@@ -102,6 +102,12 @@ def _build_parser() -> argparse.ArgumentParser:
         metavar="FILE",
         help="Path(s) to ISO 20022 XML message file(s).",
     )
+    val.add_argument(                       # also accept --format after the subcommand
+        "--format",
+        choices=("table", "json"),
+        default=argparse.SUPPRESS,
+        help="output format (default: table)",
+    )
     return parser
 
 

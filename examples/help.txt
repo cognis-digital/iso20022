@@ -1,0 +1,18 @@
+$ iso20022-emit --help
+
+usage: iso20022 [-h] [--version] [--format {table,json}] {validate} ...
+
+Validate and lint ISO 20022 pacs/camt XML payment messages (SWIFT MX). Zero dependencies, standard library only.
+
+positional arguments:
+  {validate}
+    validate            Validate one or more ISO 20022 XML message files.
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        Output format (default: table). Use json for CI /
+                        piping.
+
+Example: iso20022 validate payment.xml --format json

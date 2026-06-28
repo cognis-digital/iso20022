@@ -20,6 +20,41 @@ pip install cognis-iso20022
 iso20022 scan .            # → prioritized findings in seconds
 ```
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ iso20022-emit --version
+iso20022 0.1.0
+```
+
+```console
+$ iso20022-emit --help
+usage: iso20022 [-h] [--version] [--format {table,json}] {validate} ...
+
+Validate and lint ISO 20022 pacs/camt XML payment messages (SWIFT MX). Zero dependencies, standard library only.
+
+positional arguments:
+  {validate}
+    validate            Validate one or more ISO 20022 XML message files.
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        Output format (default: table). Use json for CI /
+                        piping.
+
+Example: iso20022 validate payment.xml --format json
+```
+
+> Blocks above are real `iso20022` output — reproduce them from a clone.
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 1. **Install** (zero runtime dependencies, standard library only):

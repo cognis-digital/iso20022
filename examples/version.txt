@@ -1,0 +1,3 @@
+$ iso20022-emit --version
+
+iso20022 0.1.0
